@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>clock</title>
+<style>
+  :root { color-scheme: dark; }
+  html, body { margin: 0; height: 100%; background: #191919; color: #e6e6e6; font-family: -apple-system, "Segoe UI", "Hiragino Sans", "Noto Sans JP", sans-serif; }
+  .wrap { box-sizing: border-box; height: 100%; display: flex; align-items: center; justify-content: center; }
+  .t { font-size: min(22vw, 72vh); font-weight: 700; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; line-height: 1; }
+</style>
+</head>
+<body>
+<div class="wrap"><div class="t" id="t"></div></div>
+<script>
+(function(){
+  function p(n){ return (n < 10 ? "0" : "") + n; }
+  function tick(){ var d = new Date(); document.getElementById("t").textContent = p(d.getHours()) + ":" + p(d.getMinutes()); }
+  tick(); setInterval(tick, 10000);
+})();
+</script>
+</body>
+</html>
